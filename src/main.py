@@ -134,10 +134,10 @@ class Spider:
             else:
                 splturl=item[0].split('/')
                 name=splturl.pop()
-            self.mkdir(self.savePath + name)
-            self.saveInfo(self.savePath + name, item)
-            self.saveIcon(self.savePath + name, item[1])
-            self.saveImgs(self.savePath + name, images, name)
+            self.mkdir(self.savePath + '/' + name)
+            self.saveInfo(self.savePath + '/' + name, item)
+            self.saveIcon(self.savePath + '/' + name, item[1])
+            self.saveImgs(self.savePath + '/' + name, images, name)
 
     #保存多页
     def savePagesInfo(self,start,end):
@@ -146,5 +146,5 @@ class Spider:
             self.savePageInfo(i)
 
 spider=Spider()
-spider.savePagesInfo(11,12) #页码范围
+spider.savePagesInfo(1,12) #页码范围
 #spider.savePageInfo(1)
